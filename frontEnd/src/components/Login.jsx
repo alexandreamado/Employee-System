@@ -124,7 +124,7 @@ const Login = () => {
                 <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
                   <button
-                    class="font-medium bg-[#212121] text-primary-600 hover:underline dark:text-primary-500"
+                    class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
                     Sign up
                   </button>
