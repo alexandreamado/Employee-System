@@ -22,6 +22,24 @@ router.post("/adminlogin", (req, res) => {
       return res.json({ loginStatus: false, Error: "Wrong email or password" });
     }
   });
-});
+});  
+
+
+router.get('/category', (req, res) => {
+  const sql = 'SELECT * FROM  category'; 
+  conn.query(sql, (err, result) => {
+    if(err) return res.json({Status: false, Error: "Query Error"})
+    return res.json({Status: true, Result: result})
+  })
+})
+
+// EndPoint Para adicionar uma categoria
+router.post('/add_category', (req, res) => {
+  const sql = 'INSERT INTO category (`name`) values (?)'
+  conn.query(sql, [req.body.category], (err, result) => {
+    if(err) return res.json({Status: false, Error: "Query Error"})
+    return res.json({Status: true})
+  })
+})
 
 export { router as adminRouter };
